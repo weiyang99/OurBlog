@@ -1,4 +1,4 @@
-import "@/styles/global.css";
+import "@styles/globals.css";
 
 import Nav from "@/components/Nav";
 import Provider from "@/components/Provider";
@@ -12,7 +12,7 @@ const RootLayout = ({ children }) => (
   <html lang='en'>
     <body>
       <Provider>
-        <main className='app'>
+        <main>
           <Nav />
           {children}
         </main>
