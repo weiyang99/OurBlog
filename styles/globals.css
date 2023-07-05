@@ -51,12 +51,24 @@
     @apply text-white z-10 mt-5 text-lg max-w-2xl font-inter;
 }
 
+.feed {
+    @apply mt-16 mx-auto w-full flex_center flex-col gap-2;
+}
+
+.post_layout {
+    @apply space-y-6 p-8;
+}
+
+.post_card {
+    @apply flex-1 break-inside-avoid rounded-lg border border-gray-300 bg-white/20 bg-clip-padding p-6 pb-4 backdrop-blur-lg backdrop-filter md:w-[650px] w-full h-fit;
+}
+
 .gray_btn {
     @apply rounded-full border border-gray-400 bg-gray-700 py-1.5 px-5 text-white transition-all hover:bg-gray-800 hover:border-gray-600 text-center text-sm font-inter flex items-center justify-center;
 }
 
 .create_post{
-    @apply flex_center flex-col w-full min-h-screen bg-gradient-to-r from-[#ffeeeebe] to-[#fff4b849];
+    @apply flex_center flex-col w-full min-h-screen bg-gradient-to-r from-[#ffeeee] to-[#fff4b875];
 }
 .create_post_h1{
     @apply font-satoshi text-5xl font-extrabold bg-clip-text bg-gradient-to-r from-[#f7707b] to-[#f3af50] text-transparent;
@@ -91,4 +103,16 @@
 
 .edit_post_h1{
     @apply font-satoshi text-5xl font-extrabold bg-clip-text bg-gradient-to-r from-[#00f26176] to-[#459df6] text-transparent;
+}
+
+.blue_gradient {
+    @apply bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent;
+}
+
+.orange_gradient {
+    @apply bg-gradient-to-r from-amber-500 via-orange-600 to-yellow-500 bg-clip-text text-transparent;
+}
+  
+.green_gradient {
+    @apply bg-gradient-to-r from-green-400 to-green-500 bg-clip-text text-transparent;
 }
