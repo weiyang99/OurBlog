@@ -52,15 +52,19 @@
 }
 
 .feed {
-    @apply mt-16 mx-auto w-full flex_center flex-col gap-2;
+    @apply pt-16 mx-auto w-full flex_center flex-col gap-2 bg-gradient-to-r from-[#ffccf030] to-[#ffefba48];
+}
+
+.search_input {
+    @apply block w-96 rounded-md border border-gray-200 bg-white mb-8 py-2.5 font-satoshi pl-5 pr-5 text-sm shadow-lg font-medium focus:border-black focus:outline-none focus:ring-0;
 }
 
 .post_layout {
-    @apply space-y-6 p-8;
+    @apply space-y-10 p-8;
 }
 
 .post_card {
-    @apply flex-1 break-inside-avoid rounded-lg border border-gray-300 bg-white/20 bg-clip-padding p-6 pb-4 backdrop-blur-lg backdrop-filter md:w-[650px] w-full h-fit;
+    @apply flex-1 break-inside-avoid rounded-lg border border-gray-300 bg-white/70 bg-clip-padding p-6 pb-4 backdrop-blur-lg backdrop-filter md:w-[650px] w-full h-fit;
 }
 
 .gray_btn {
@@ -102,7 +106,7 @@
 }
 
 .edit_post_h1{
-    @apply font-satoshi text-5xl font-extrabold bg-clip-text bg-gradient-to-r from-[#00f26176] to-[#459df6] text-transparent;
+    @apply font-satoshi text-5xl font-extrabold bg-clip-text bg-gradient-to-r from-[#18f972a9] to-[#459df6] text-transparent;
 }
 
 .blue_gradient {
