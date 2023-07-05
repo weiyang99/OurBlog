@@ -4,9 +4,11 @@ import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { signIn, signOut, useSession, getProviders } from "next-auth/react";
+import { usePathname } from 'next/navigation'
 
 const Nav = () => {
     const { data: session } = useSession();
+    const path = usePathname();
 
     const [providers, setProviders] = useState(null);
 
@@ -18,8 +20,8 @@ const Nav = () => {
     }, []);
 
     return (
-        <nav className="navbar" >
-            <Link href='/' className='font-euphoria'>
+        <nav className="navbar" style={{ borderBottom: path === '/' ? 'white 1px solid' : 'black 1px solid', background: path === '/' ? 'none' : 'white' }}>
+            <Link href='/' className='font-euphoria' style={{ color: path === '/' ? 'white' : 'black' }}>
                 Our Blog
             </Link>
             <div className="absolute right-5" >
