@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const Loading = () => {
     return (
-        <div className='w-full flex-center'>
+        <div className='w-full flex-center z-20'>
             <Image
                 src='assets/icons/loader.svg'
                 width={50}

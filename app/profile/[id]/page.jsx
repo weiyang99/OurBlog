@@ -17,7 +17,7 @@ const UserProfile = ({ params }) => {
             const response = await fetch(`/api/users/${params?.id}/posts`);
             const data = await response.json();
 
-            setUserPosts(data);
+            setUserPosts(data.reverse());
         };
 
         if (params?.id) fetchPosts();
@@ -51,7 +51,7 @@ const UserProfile = ({ params }) => {
         <Profile
             name={userName}
             desc={`Welcome to ${userName}'s personalized profile page. Explore ${userName}'s journey and get to know them.`}
-            data={userPosts.reverse()}
+            data={userPosts}
             handleEdit={handleEdit}
             handleDelete={handleDelete}
         />

@@ -66,13 +66,13 @@ const PostCard = ({ post, handleEdit, handleDelete, handleTagClick }) => {
             {session?.user.id === post.creator._id && path !== "/" && (
                 <div className='mt-5 flex_center gap-4 border-t border-gray-100 pt-3'>
                     <p
-                        className='font-inter text-base font-semibold green_gradient cursor-pointer'
+                        className='font-inter text-base font-semibold green_gradient cursor-pointer active:text-green-800'
                         onClick={handleEdit}
                     >
                         Edit
                     </p>
                     <p
-                        className='font-inter text-base font-semibold orange_gradient cursor-pointer'
+                        className='font-inter text-base font-semibold orange_gradient cursor-pointer active:text-orange-800'
                         onClick={handleDelete}
                     >
                         Delete
