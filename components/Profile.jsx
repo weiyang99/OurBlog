@@ -1,13 +1,13 @@
 import Image from "next/image";
 import PromptCard from "./PostCard";
 
-const Profile = ({ name, desc, session, data, handleEdit, handleDelete }) => {
+const Profile = ({ name, desc, data, handleEdit, handleDelete }) => {
     return (
         <section className='profile'>
             <div className="mt-36 ml-10">
                 <div className='flex-1 flex justify-start items-center gap-3'>
                     <Image
-                        src={session?.user.image}
+                        src={data[0]?.creator.image}
                         alt='user_image'
                         width={100}
                         height={100}
@@ -16,10 +16,10 @@ const Profile = ({ name, desc, session, data, handleEdit, handleDelete }) => {
 
                     <div className='flex flex-col'>
                         <h3 className='font-satoshi font-semibold text-gray-900'>
-                            {session?.user.name}
+                            {data[0]?.creator.username}
                         </h3>
                         <p className='font-inter text-sm text-gray-500'>
-                            {session?.user.email}
+                            {data[0]?.creator.email}
                         </p>
                     </div>
                 </div>

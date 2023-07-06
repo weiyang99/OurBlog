@@ -4,11 +4,12 @@ import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { signIn, signOut, useSession, getProviders } from "next-auth/react";
-import { usePathname } from 'next/navigation'
+import { usePathname, useRouter } from 'next/navigation'
 
 const Nav = () => {
     const { data: session } = useSession();
     const path = usePathname();
+    const router = useRouter();
 
     const [providers, setProviders] = useState(null);
 
@@ -18,6 +19,12 @@ const Nav = () => {
             setProviders(res);
         })();
     }, []);
+
+    const handleProfileClick = () => {
+        // if (post.creator._id === session?.user.id) return router.push("/profile");
+
+        router.push(`/profile/${session.user.id}?name=${session.user.name}`);
+    };
 
     return (
         <nav className="navbar" style={{ borderBottom: path === '/' ? 'white 1px solid' : 'black 1px solid', background: path === '/' ? 'none' : 'white' }}>
@@ -35,15 +42,17 @@ const Nav = () => {
                             Sign Out
                         </button>
 
-                        <Link href='/profile'>
+                        <button type='button'>
+
                             <Image
                                 src={session?.user.image}
                                 width={37}
                                 height={37}
                                 className='rounded-full'
                                 alt='profile'
+                                onClick={handleProfileClick}
                             />
-                        </Link>
+                        </button>
                     </div>
                 ) : (
                     <>

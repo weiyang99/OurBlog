@@ -13,7 +13,7 @@ const PostCard = ({ post, handleEdit, handleDelete, handleTagClick }) => {
     const updatedTime = new Date(post.updatedAt).toLocaleTimeString()
 
     const handleProfileClick = () => {
-        if (post.creator._id === session?.user.id) return router.push("/profile");
+        // if (post.creator._id === session?.user.id) return router.push("/profile");
 
         router.push(`/profile/${post.creator._id}?name=${post.creator.username}`);
     };
@@ -63,16 +63,16 @@ const PostCard = ({ post, handleEdit, handleDelete, handleTagClick }) => {
                 #{post.tag}
             </p>
 
-            {session?.user.id === post.creator._id && path === "/profile" && (
+            {session?.user.id === post.creator._id && path !== "/" && (
                 <div className='mt-5 flex_center gap-4 border-t border-gray-100 pt-3'>
                     <p
-                        className='font-inter text-sm green_gradient cursor-pointer'
+                        className='font-inter text-base font-semibold green_gradient cursor-pointer'
                         onClick={handleEdit}
                     >
                         Edit
                     </p>
                     <p
-                        className='font-inter text-sm orange_gradient cursor-pointer'
+                        className='font-inter text-base font-semibold orange_gradient cursor-pointer'
                         onClick={handleDelete}
                     >
                         Delete
