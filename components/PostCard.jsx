@@ -49,6 +49,7 @@ const PostCard = ({ post, handleEdit, handleDelete, handleTagClick }) => {
                     src={post.image}
                     alt='post_image'
                     fill
+                    sizes="(max-width: 600px) 300px"
                     className='object-contain'
                 />
             </div>

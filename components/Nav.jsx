@@ -12,6 +12,7 @@ const Nav = () => {
     const router = useRouter();
 
     const [providers, setProviders] = useState(null);
+    const [toggleDropdown, setToggleDropdown] = useState(false);
 
     useEffect(() => {
         (async () => {
@@ -31,7 +32,9 @@ const Nav = () => {
             <Link href='/' className='font-euphoria' style={{ color: path === '/' ? 'white' : 'black' }}>
                 Our Blog
             </Link>
-            <div className="absolute right-5" >
+
+            {/* Desktop Navigation */}
+            <div className="absolute right-5 sm:flex hidden" >
                 {session?.user ? (
                     <div className='flex gap-3 md:gap-5'>
                         <Link href='/create-post' className='gray_btn'>
@@ -53,6 +56,69 @@ const Nav = () => {
                                 onClick={handleProfileClick}
                             />
                         </button>
+                    </div>
+                ) : (
+                    <>
+                        {providers &&
+                            Object.values(providers).map((provider) => (
+                                <button
+                                    type='button'
+                                    key={provider.name}
+                                    onClick={() => {
+                                        signIn(provider.id);
+                                    }}
+                                    className='gray_btn'
+                                >
+                                    Sign in
+                                </button>
+                            ))}
+                    </>
+                )}
+            </div>
+
+            {/* Mobile Navigation */}
+            <div className='absolute right-5 sm:hidden flex'>
+                {session?.user ? (
+                    <div className='flex'>
+                        <Image
+                            src={session?.user.image}
+                            width={37}
+                            height={37}
+                            className='rounded-full'
+                            alt='profile'
+                            onClick={() => setToggleDropdown(!toggleDropdown)}
+                        />
+
+                        {toggleDropdown && (
+                            <div className='dropdown'>
+                                <p
+                                    className='dropdown_link'
+                                    onClick={() => {
+                                        router.push(`/profile/${session.user.id}?name=${session.user.name}`);
+                                        setToggleDropdown(false);
+                                    }}
+                                >
+                                    My Profile
+                                </p>
+                                <Link
+                                    href='/create-post'
+                                    className='dropdown_link'
+                                    onClick={() => setToggleDropdown(false)}
+                                >
+                                    Create Prompt
+                                </Link>
+                                <button
+                                    type='button'
+                                    onClick={() => {
+                                        setToggleDropdown(false);
+                                        signOut();
+                                    }}
+                                    className='mt-5 w-full gray_btn'
+                                >
+                                    Sign Out
+                                </button>
+                            </div>
+                        )}
                     </div>
                 ) : (
                     <>

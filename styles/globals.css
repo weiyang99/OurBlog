@@ -22,8 +22,17 @@
 }
 
 .navbar{
-    @apply absolute w-full flex_center text-5xl text-white border-b border-white/30 backdrop-blur p-5 z-10;
+    @apply absolute w-full flex items-center justify-between sm:justify-center text-5xl text-white border-b border-white/30 backdrop-blur p-5 z-10;
 }
+
+.dropdown {
+    @apply absolute right-0 top-full mt-3 w-full p-5 rounded-lg bg-white min-w-[210px] flex flex-col gap-2 justify-end items-end;
+}
+  
+.dropdown_link {
+    @apply text-sm font-inter text-gray-700 hover:text-gray-500 font-medium;
+}
+
 .hero{
     background-image: url('/assets/images/hero.jpg');
     background-size: cover;
@@ -44,7 +53,7 @@
 }
 
 .hero_head{
-    @apply text-white z-10 -mt-32 text-6xl font-semibold font-satoshi;
+    @apply text-white z-10 text-6xl font-semibold font-satoshi;
 }
 
 .hero_desc{
