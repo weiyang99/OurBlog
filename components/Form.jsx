@@ -60,7 +60,7 @@ const Form = ({ post, setPost, submitting, handleSubmit, handleChangeImage }) =>
             </label>
 
             <div className='flex_end mx-3 mb-5 gap-4'>
-                <Link href='/' className='text-gray-500 text-sm'>
+                <Link href='/profile' className='text-gray-500 text-sm'>
                     Cancel
                 </Link>
 
