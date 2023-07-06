@@ -34,10 +34,10 @@ const PostCard = ({ post, handleEdit, handleDelete, handleTagClick }) => {
                     />
 
                     <div className='flex flex-col'>
-                        <h3 className='font-satoshi font-semibold text-gray-900'>
+                        <h3 className='font-satoshi font-semibold sm:text-base text-sm text-gray-900'>
                             {post.creator.username}
                         </h3>
-                        <p className='font-inter text-sm text-gray-500'>
+                        <p className='font-inter sm:text-sm text-xs text-gray-500'>
                             {post.creator.email}
                         </p>
                     </div>
@@ -54,11 +54,11 @@ const PostCard = ({ post, handleEdit, handleDelete, handleTagClick }) => {
                 />
             </div>
 
-            <p className='my-4 font-satoshi text-sm text-gray-700'>{post.post}</p>
-            <p className='my-4 font-satoshi text-sm text-gray-400'>Updated: {updatedDate}{' / '}{updatedTime}</p>
+            <p className='my-4 font-satoshi sm:text-sm text-xs text-gray-700'>{post.post}</p>
+            <p className='my-4 font-satoshi sm:text-sm text-xs text-gray-400'>Updated: {updatedDate}{' / '}{updatedTime}</p>
 
             <p
-                className='font-inter text-sm blue_gradient cursor-pointer'
+                className='font-inter sm:text-sm text-xs blue_gradient cursor-pointer'
                 onClick={() => handleTagClick && handleTagClick(post.tag)}
             >
                 #{post.tag}
@@ -67,13 +67,13 @@ const PostCard = ({ post, handleEdit, handleDelete, handleTagClick }) => {
             {session?.user.id === post.creator._id && path !== "/" && (
                 <div className='mt-5 flex_center gap-4 border-t border-gray-100 pt-3'>
                     <p
-                        className='font-inter text-base font-semibold green_gradient cursor-pointer active:text-green-800'
+                        className='font-inter md:text-base sm:text-sm text-xs font-semibold green_gradient cursor-pointer active:text-green-800'
                         onClick={handleEdit}
                     >
                         Edit
                     </p>
                     <p
-                        className='font-inter text-base font-semibold orange_gradient cursor-pointer active:text-orange-800'
+                        className='font-inter md:text-base sm:text-sm text-xs font-semibold orange_gradient cursor-pointer active:text-orange-800'
                         onClick={handleDelete}
                     >
                         Delete

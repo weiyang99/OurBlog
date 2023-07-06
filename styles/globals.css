@@ -47,17 +47,17 @@
     /* z-index: 1; */
     position: absolute;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     top: 0;
     opacity: 0.55;
 }
 
 .hero_head{
-    @apply text-white z-10 text-6xl font-semibold font-satoshi;
+    @apply text-white z-10 sm:text-5xl md:text-6xl text-4xl px-2 text-center font-semibold font-satoshi;
 }
 
 .hero_desc{
-    @apply text-white z-10 mt-5 text-lg max-w-2xl font-inter;
+    @apply text-white z-10 mt-5 sm:text-base md:text-lg text-sm px-2 text-center max-w-2xl font-inter;
 }
 
 .feed {
@@ -65,7 +65,7 @@
 }
 
 .search_input {
-    @apply block w-96 rounded-md border border-gray-200 bg-white mb-8 py-2.5 font-satoshi pl-5 pr-5 text-sm shadow-lg font-medium focus:border-black focus:outline-none focus:ring-0;
+    @apply block w-60 rounded-md border border-gray-200 bg-white mb-8 py-2.5 font-satoshi pl-5 pr-5 text-sm shadow-lg font-medium focus:border-black focus:outline-none focus:ring-0;
 }
 
 .post_layout {
@@ -73,7 +73,7 @@
 }
 
 .post_card {
-    @apply flex-1 break-inside-avoid rounded-lg border border-gray-300 bg-white/70 bg-clip-padding p-6 pb-4 backdrop-blur-lg backdrop-filter md:w-[650px] w-full h-fit;
+    @apply flex-1 break-inside-avoid rounded-lg border border-gray-300 bg-white/70 bg-clip-padding p-6 pb-4 backdrop-blur-lg backdrop-filter md:w-[650px] sm:w-[450px] w-full h-fit;
 }
 
 .gray_btn {
@@ -83,8 +83,9 @@
 .create_post{
     @apply flex_center flex-col w-full min-h-screen bg-gradient-to-r from-[#ffeeee] to-[#fff4b875];
 }
+
 .create_post_h1{
-    @apply font-satoshi text-5xl font-extrabold bg-clip-text bg-gradient-to-r from-[#f7707b] to-[#f3af50] text-transparent;
+    @apply font-satoshi md:text-5xl text-4xl px-5 text-center font-extrabold bg-clip-text bg-gradient-to-r from-[#f7707b] to-[#f3af50] text-transparent;
 }
 
 .glassmorphism {
@@ -92,7 +93,7 @@
 }
 
 .form_container{
-    @apply  mb-10 mt-10 w-full max-w-2xl flex flex-col gap-7 glassmorphism;
+    @apply  mb-10 mt-10 lg:w-full md:max-w-2xl sm:max-w-md max-w-xs flex flex-col gap-7 glassmorphism;
 }
 .form_textarea {
     @apply w-full flex rounded-lg h-[200px] mt-2 p-3 text-sm text-gray-500 outline-0;
@@ -103,11 +104,11 @@
 }
 
 .form_image_container {
-    @apply flex_start w-full lg:min-h-[300px] min-h-[300px] relative;
+    @apply flex_start w-full md:min-h-[300px] min-h-[200px] relative;
 }
   
 .form_image_label {
-    @apply flex_center z-10 text-center w-full h-full p-40 text-gray-500 border-2 border-gray-500 border-dashed;
+    @apply flex_center z-10 text-sm sm:text-base text-center w-full h-full p-28 sm:p-32 md:p-40 text-gray-500 border-2 border-gray-500 border-dashed;
 }
   
 .form_image_input {
@@ -115,16 +116,20 @@
 }
 
 .edit_post_h1{
-    @apply font-satoshi text-5xl font-extrabold bg-clip-text bg-gradient-to-r from-[#18f972a9] to-[#459df6] text-transparent;
+    @apply font-satoshi lg:text-4xl text-3xl px-2 font-extrabold bg-clip-text bg-gradient-to-r from-[#18f972a9] to-[#459df6] text-transparent;
 }
 
 .profile{
     @apply flex flex-col w-full min-h-screen bg-gradient-to-r from-[#ffeeee] to-[#fff4b875];
 }
 
+.profile_h1{
+    @apply font-satoshi lg:text-4xl text-3xl px-2 font-extrabold bg-clip-text bg-gradient-to-r from-[#f7707b] to-[#f3af50] text-transparent;
+}
+
 .desc {
-    @apply font-inter font-medium mt-5 text-lg text-gray-600 sm:text-xl max-w-7xl;
-  }
+    @apply font-inter font-medium mt-5 lg:text-base text-sm px-2 text-gray-600 max-w-7xl;
+}
 
 .blue_gradient {
     @apply bg-gradient-to-r from-blue-500 to-cyan-500 bg-clip-text text-transparent;

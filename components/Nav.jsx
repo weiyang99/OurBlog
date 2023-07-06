@@ -34,7 +34,7 @@ const Nav = () => {
             </Link>
 
             {/* Desktop Navigation */}
-            <div className="absolute right-5 sm:flex hidden" >
+            <div className="absolute right-5 lg:flex hidden" >
                 {session?.user ? (
                     <div className='flex gap-3 md:gap-5'>
                         <Link href='/create-post' className='gray_btn'>
@@ -77,7 +77,7 @@ const Nav = () => {
             </div>
 
             {/* Mobile Navigation */}
-            <div className='absolute right-5 sm:hidden flex'>
+            <div className='absolute right-5 lg:hidden flex'>
                 {session?.user ? (
                     <div className='flex'>
                         <Image
