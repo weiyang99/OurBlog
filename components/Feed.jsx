@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 
 import PostCard from "./PostCard";
+import Loading from "@app/loading";
 
 const PromptCardList = ({ data, handleTagClick }) => {
     return (
@@ -65,6 +66,10 @@ const Feed = () => {
     useEffect(() => {
         fetchPosts();
     }, []);
+
+    if (!allPosts.length) {
+        return <Loading />
+    }
 
     return (
         <section className='feed'>

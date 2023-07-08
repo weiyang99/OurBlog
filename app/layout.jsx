@@ -1,7 +1,6 @@
 import "@styles/globals.css";
 
-import Nav from "@/components/Nav";
-import Provider from "@/components/Provider";
+import { Nav, UpArrow, Provider } from "@components";
 
 export const metadata = {
   title: 'Our Blog',
@@ -15,6 +14,7 @@ const RootLayout = ({ children }) => (
         <main>
           <Nav />
           {children}
+          <UpArrow />
         </main>
       </Provider>
     </body>

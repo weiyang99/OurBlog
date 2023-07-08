@@ -5,6 +5,10 @@
 @tailwind components;
 @tailwind utilities;
 
+html{
+    scroll-behavior: smooth;
+}
+
 .flex_center {
     @apply flex justify-center items-center;
 }
