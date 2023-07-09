@@ -21,7 +21,7 @@ const UserProfile = ({ params }) => {
         };
 
         if (params?.id) fetchPosts();
-    }, [params.id]);
+    }, [params.id, userPosts]);
 
     const handleEdit = (post) => {
         router.push(`/update-post?id=${post._id}`);
@@ -38,9 +38,9 @@ const UserProfile = ({ params }) => {
                     method: "DELETE",
                 });
 
-                const filteredPosts = myPosts.filter((item) => item._id !== post._id);
+                const filteredPosts = userPosts.filter((item) => item._id !== post._id);
 
-                setMyPosts(filteredPosts);
+                setUserPosts(filteredPosts);
             } catch (error) {
                 console.log(error);
             }
