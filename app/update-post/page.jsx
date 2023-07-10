@@ -63,7 +63,7 @@ const UpdatePost = () => {
             });
 
             if (response.ok) {
-                router.push("/profile");
+                router.push(`/profile/${session.user.id}?name=${session.user.name}`);
             }
         } catch (error) {
             console.log(error);

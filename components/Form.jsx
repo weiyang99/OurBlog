@@ -15,7 +15,6 @@ const Form = ({ post, setPost, submitting, handleSubmit, handleChangeImage }) =>
                     id="image"
                     type="file"
                     accept='image/*'
-                    required
                     className="form_image_input"
                     onChange={(e) => handleChangeImage(e)}
                 />

@@ -8,7 +8,7 @@ const UpArrow = () => {
     }
 
     return (
-        <div className='z-20 fixed bottom-5 right-5'>
+        <div className='z-20 fixed bottom-6 right-6'>
             <Image
                 src='/assets/icons/upArrow.svg'
                 width={50}
