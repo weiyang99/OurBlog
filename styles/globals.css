@@ -9,6 +9,10 @@ html{
     scroll-behavior: smooth;
 }
 
+.box_shadow{
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
 .flex_center {
     @apply flex justify-center items-center;
 }
@@ -80,6 +84,10 @@ html{
     @apply flex-1 break-inside-avoid rounded-lg border border-gray-300 bg-white/70 bg-clip-padding p-6 pb-4 backdrop-blur-lg backdrop-filter md:w-[650px] sm:w-[450px] w-full h-fit;
 }
 
+.comment_card {
+    @apply flex-1 break-inside-avoid rounded-lg border border-gray-300 bg-white/70 bg-clip-padding p-6 pb-4 backdrop-blur-lg backdrop-filter w-full h-fit mt-5;
+}
+
 .gray_btn {
     @apply rounded-full border border-gray-400 bg-gray-700 py-1.5 px-5 text-white transition-all hover:bg-gray-800 hover:border-gray-600 text-center text-sm font-inter flex items-center justify-center active:bg-white active:text-black;
 }
@@ -100,7 +108,7 @@ html{
     @apply  mb-10 mt-10 lg:w-full md:max-w-2xl sm:max-w-md max-w-xs flex flex-col gap-7 glassmorphism;
 }
 .form_textarea {
-    @apply w-full flex rounded-lg h-[200px] mt-2 p-3 text-sm text-gray-500 outline-0;
+    @apply w-full flex rounded-lg h-[200px] mt-2 p-3 text-sm text-gray-600 outline-0;
 }
   
 .form_input {
@@ -133,6 +141,14 @@ html{
 
 .desc {
     @apply font-inter font-medium mt-5 lg:text-base text-sm px-2 text-gray-600 max-w-7xl;
+}
+
+.dialog_panel{
+    @apply w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all;
+}
+
+.add_comment{
+    @apply flex_center rounded-md bg-white hover:bg-gray-700 active:bg-black hover:text-white box_shadow px-4 py-2 text-lg font-medium leading-6 cursor-pointer;
 }
 
 .blue_gradient {

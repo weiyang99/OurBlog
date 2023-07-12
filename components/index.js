@@ -4,5 +4,7 @@ export { default as Nav } from "./Nav";
 export { default as PostCard } from "./PostCard";
 export { default as Provider } from "./Provider";
 export { default as Profile } from "./Profile";
+export { default as Comment } from "./Comment";
+export { default as CommentCard } from "./CommentCard";
 export { default as Mouse } from "./Mouse";
 export { default as UpArrow } from "./UpArrow";

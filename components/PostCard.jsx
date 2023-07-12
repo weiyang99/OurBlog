@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useSession } from "next-auth/react";
 import { usePathname, useRouter } from "next/navigation";
+import Comment from "./Comment";
 
 const PostCard = ({ post, handleEdit, handleDelete, handleTagClick }) => {
     const { data: session } = useSession();
@@ -13,8 +14,6 @@ const PostCard = ({ post, handleEdit, handleDelete, handleTagClick }) => {
     const updatedTime = new Date(post.updatedAt).toLocaleTimeString()
 
     const handleProfileClick = () => {
-        // if (post.creator._id === session?.user.id) return router.push("/profile");
-
         router.push(`/profile/${post.creator._id}?name=${post.creator.username}`);
     };
 
@@ -37,7 +36,7 @@ const PostCard = ({ post, handleEdit, handleDelete, handleTagClick }) => {
                         <h3 className='font-satoshi font-semibold sm:text-base text-sm text-gray-900'>
                             {post.creator.username}
                         </h3>
-                        <p className='font-inter sm:text-sm text-xs text-gray-500'>
+                        <p className='font-inter text-xs text-gray-500'>
                             {post.creator.email}
                         </p>
                     </div>
@@ -54,15 +53,20 @@ const PostCard = ({ post, handleEdit, handleDelete, handleTagClick }) => {
                 />
             </div>
 
-            <p className='my-4 font-satoshi sm:text-sm text-xs text-gray-700'>{post.post}</p>
-            <p className='my-4 font-satoshi sm:text-sm text-xs text-gray-400'>Updated: {updatedDate}{' / '}{updatedTime}</p>
+            <p className='my-4 font-satoshi text-sm text-gray-700'>{post.post}</p>
+            <p className='my-4 font-satoshi text-xs text-gray-400'>Updated: {updatedDate}{' / '}{updatedTime}</p>
 
-            <p
-                className='font-inter sm:text-sm text-xs blue_gradient cursor-pointer'
-                onClick={() => handleTagClick && handleTagClick(post.tag)}
-            >
-                #{post.tag}
-            </p>
+            <div className="flex_between">
+                <p
+                    className='font-inter sm:text-sm text-xs blue_gradient cursor-pointer'
+                    onClick={() => handleTagClick && handleTagClick(post.tag)}
+                >
+                    #{post.tag}
+                </p>
+
+                <Comment post_id={post._id} />
+
+            </div>
 
             {session?.user.id === post.creator._id && path !== "/" && (
                 <div className='mt-5 flex_center gap-4 border-t border-gray-100 pt-3'>
