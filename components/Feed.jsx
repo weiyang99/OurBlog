@@ -26,13 +26,6 @@ const Feed = () => {
     const [searchTimeout, setSearchTimeout] = useState(null);
     const [searchedResults, setSearchedResults] = useState([]);
 
-    const fetchPosts = async () => {
-        const response = await fetch("/api/blogpost");
-        const data = await response.json();
-
-        setAllPosts(data);
-    };
-
     const filterPrompts = (searchtext) => {
         const regex = new RegExp(searchtext, "i"); // 'i' flag for case-insensitive search
         return allPosts.filter(
@@ -64,6 +57,15 @@ const Feed = () => {
     };
 
     useEffect(() => {
+        const fetchPosts = async () => {
+            const response = await fetch("/api/blogpost", {
+                method: "GET",
+            });
+            const data = await response.json();
+
+            setAllPosts(data);
+        };
+
         fetchPosts();
     }, []);
 
