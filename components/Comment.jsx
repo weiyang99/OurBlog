@@ -86,7 +86,7 @@ const Comment = ({ post_id }) => {
 
     return (
         <>
-            <div className="fixed flex justify-end items-end inset-0 right-3 bottom-3">
+            <div className="absolute flex justify-end items-end inset-0 right-6 bottom-3">
                 <button
                     type="button"
                     onClick={openModal}
