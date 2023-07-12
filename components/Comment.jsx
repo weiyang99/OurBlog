@@ -82,11 +82,11 @@ const Comment = ({ post_id }) => {
             setCommentList(data);
         };
         if (post_id) fetchComments();
-    }, [submitting, commentList]);
+    }, [submitting]);
 
     return (
         <>
-            <div className="absolute flex justify-end items-end inset-0 right-6 bottom-3">
+            <div>
                 <button
                     type="button"
                     onClick={openModal}
