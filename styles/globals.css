@@ -69,7 +69,7 @@ html{
 }
 
 .feed {
-    @apply pt-16 mx-auto w-full flex_center flex-col gap-2 bg-gradient-to-r from-[#ffccf030] to-[#ffefba48];
+    @apply pt-32 mx-auto w-full flex_center flex-col gap-2 bg-gradient-to-r from-[#ffccf030] to-[#ffefba48];
 }
 
 .search_input {
@@ -90,6 +90,10 @@ html{
 
 .gray_btn {
     @apply rounded-full border border-gray-400 bg-gray-700 py-1.5 px-5 text-white transition-all hover:bg-gray-800 hover:border-gray-600 text-center text-sm font-inter flex items-center justify-center active:bg-white active:text-black;
+}
+
+.feed_btn{
+    @apply z-40 mt-12 rounded-md border-2 border-gray-200 bg-gray-700 py-1.5 px-10 text-white transition-all hover:bg-gray-500 text-center font-inter flex_center active:bg-white active:text-black;
 }
 
 .create_post{
