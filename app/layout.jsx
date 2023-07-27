@@ -1,4 +1,5 @@
 import "@styles/globals.css";
+import NextTopLoader from 'nextjs-toploader';
 
 import { Nav, UpArrow, Provider } from "@components";
 
@@ -10,6 +11,7 @@ export const metadata = {
 const RootLayout = ({ children }) => (
   <html lang='en'>
     <body>
+      <NextTopLoader showSpinner={false} />
       <Provider>
         <main>
           <Nav />
