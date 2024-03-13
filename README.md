@@ -14,4 +14,4 @@ Here are some usages of the app:
 - View all posts of others from their profile page
 
 ## Link
-[link](https://our-blog-drab.vercel.app/)
+https://our-blog-drab.vercel.app/
